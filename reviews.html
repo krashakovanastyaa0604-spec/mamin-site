@@ -9,6 +9,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<!-- Оформление круглых фотографий только для страницы отзывов -->
+<style>
+  .rgrid .rphoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 18px 0;
+  }
+
+  .rgrid .rphoto img {
+    display: block;
+    width: 112px;
+    height: 112px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    box-shadow: 0 2px 10px rgba(35, 43, 40, .10);
+    background: var(--sage);
+  }
+
+  .rgrid .rphoto-empty::after {
+    content: "Фото";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 1px dashed var(--muted);
+    background: color-mix(in srgb, var(--sage) 35%, var(--surface));
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: .04em;
+  }
+
+  @media (max-width: 600px) {
+    .rgrid .rphoto { padding-top: 20px; }
+    .rgrid .rphoto img,
+    .rgrid .rphoto-empty::after {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -50,7 +96,7 @@
 
       <div class="rgrid">
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/lilia.jpg" alt="Фото со съёмки: Лилия" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/lilia.jpg" alt="Фото со съёмки: Лилия" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Лилия</h3>
@@ -63,7 +109,7 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/gurianova.jpg" alt="Фото со съёмки: Елизавета Гурьянова" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/gurianova.jpg" alt="Фото со съёмки: Елизавета Гурьянова" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Елизавета Гурьянова</h3>
@@ -75,7 +121,7 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/elena.jpg" alt="Фото со съёмки: Елена" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/elena.jpg" alt="Фото со съёмки: Елена" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Елена</h3>
@@ -85,7 +131,7 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/margarita.jpg" alt="Фото со съёмки: Маргарита" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/margarita.jpg" alt="Фото со съёмки: Маргарита" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Маргарита</h3>
@@ -98,7 +144,7 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/milyausha.jpg" alt="Фото со съёмки: Миляуша Мусагитова" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/milyausha.jpg" alt="Фото со съёмки: Миляуша Мусагитова" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Миляуша Мусагитова</h3>
@@ -109,7 +155,7 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/irina.jpg" alt="Фото со съёмки: Ирина" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/irina.jpg" alt="Фото со съёмки: Ирина" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ирина</h3>
@@ -119,7 +165,7 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
-        <div class="rphoto"><img src="img/reviews/alsu.jpg" alt="Фото со съёмки: Алсу" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/alsu.jpg" alt="Фото со съёмки: Алсу" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Алсу</h3>
@@ -129,7 +175,7 @@
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
-        <div class="rphoto"><img src="img/reviews/anastasia.jpg" alt="Фото со съёмки: Анастасия" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/anastasia.jpg" alt="Фото со съёмки: Анастасия" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Беременность</span>
           <h3>Анастасия</h3>
@@ -139,7 +185,7 @@
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
-        <div class="rphoto"><img src="img/reviews/v-ozhidanii.jpg" alt="Фото со съёмки: В ожидании" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/v-ozhidanii.jpg" alt="Фото со съёмки: В ожидании" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Беременность</span>
           <h3>В ожидании</h3>
@@ -149,7 +195,7 @@
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
-        <div class="rphoto"><img src="img/reviews/elvira.jpg" alt="Фото со съёмки: Эльвира Гумерова" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/elvira.jpg" alt="Фото со съёмки: Эльвира Гумерова" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Беременность</span>
           <h3>Эльвира Гумерова</h3>
@@ -159,7 +205,7 @@
         </div>
       </article>
       <article class="rcard" data-type="portrait">
-        <div class="rphoto"><img src="img/reviews/ramziya.jpg" alt="Фото со съёмки: Рамзия" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/ramziya.jpg" alt="Фото со съёмки: Рамзия" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Рамзия</h3>
@@ -169,7 +215,7 @@
         </div>
       </article>
       <article class="rcard" data-type="portrait">
-        <div class="rphoto"><img src="img/reviews/albina.jpg" alt="Фото со съёмки: Альбина" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/albina.jpg" alt="Фото со съёмки: Альбина" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Альбина</h3>
@@ -179,7 +225,7 @@
         </div>
       </article>
       <article class="rcard" data-type="portrait">
-        <div class="rphoto"><img src="img/reviews/milya.jpg" alt="Фото со съёмки: Миля" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></div>
+        <div class="rphoto"><img src="img/reviews/milya.jpg" alt="Фото со съёмки: Миля" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('rphoto-empty'); this.remove()"></div>
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Миля</h3>
@@ -191,6 +237,8 @@
         </div>
       </article>
       <article class="rcard" data-type="portrait">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Юлия</h3>
@@ -200,6 +248,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Рик и Лана</h3>
@@ -209,6 +259,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия</h3>
@@ -218,6 +270,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Королевишна</h3>
@@ -227,6 +281,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Прекрасная 🤍</h3>
@@ -236,6 +292,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Лилия</h3>
@@ -248,6 +306,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гульнара</h3>
@@ -257,6 +317,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гузель</h3>
@@ -266,6 +328,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Крещение</h3>
@@ -275,6 +339,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Пикник с воздушными змеями</h3>
@@ -284,6 +350,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Первый день рождения</h3>
@@ -293,6 +361,8 @@
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>В кругу семьи</h3>
@@ -308,6 +378,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Только для меня</h3>
@@ -317,6 +389,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Кто там?</h3>
@@ -329,6 +403,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Женский портрет</h3>
@@ -338,6 +414,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Семейный новый год</h3>
@@ -347,6 +425,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Женский портрет</h3>
@@ -356,6 +436,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гузель</h3>
@@ -365,6 +447,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Динара</h3>
@@ -377,6 +461,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Екатерина</h3>
@@ -386,6 +472,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ирек</h3>
@@ -395,6 +483,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эльвира</h3>
@@ -404,6 +494,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Александра</h3>
@@ -413,6 +505,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Арина</h3>
@@ -422,6 +516,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гульнара</h3>
@@ -431,6 +527,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эля</h3>
@@ -441,6 +539,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эльвира</h3>
@@ -450,6 +550,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ильмира</h3>
@@ -461,6 +563,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия Хайруллина</h3>
@@ -471,6 +575,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия</h3>
@@ -480,6 +586,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ирина Герасимова</h3>
@@ -489,6 +597,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Елена и Булат</h3>
@@ -498,6 +608,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Миляуша Мусагитова</h3>
@@ -508,6 +620,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>чулпан</h3>
@@ -517,6 +631,8 @@
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Хайруллина Юлия</h3>
@@ -529,6 +645,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гузель Абаева</h3>
@@ -538,6 +656,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Диляра Салихова</h3>
@@ -547,6 +667,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Миляуша</h3>
@@ -556,6 +678,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Александра Васильева</h3>
@@ -565,6 +689,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эльмира Гарипова</h3>
@@ -575,6 +701,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Альбина Захарова</h3>
@@ -584,6 +712,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Алмазия</h3>
@@ -593,6 +723,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ангелина Горшенина</h3>
@@ -604,6 +736,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Горшенин Максим</h3>
@@ -613,6 +747,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Альбина</h3>
@@ -622,6 +758,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ильмира</h3>
@@ -633,6 +771,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Айгуль</h3>
@@ -642,6 +782,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Алина</h3>
@@ -651,6 +793,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Резеда</h3>
@@ -660,6 +804,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Елизавета</h3>
@@ -670,6 +816,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Светлана</h3>
@@ -681,6 +829,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ирина</h3>
@@ -691,6 +841,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Анна</h3>
@@ -701,6 +853,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="portrait">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Алсу</h3>
@@ -710,6 +864,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Альбина</h3>
@@ -719,6 +875,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Лана</h3>
@@ -728,6 +886,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Екатерина</h3>
@@ -737,6 +897,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Дина</h3>
@@ -746,6 +908,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гульназ</h3>
@@ -755,6 +919,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="portrait">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Рената</h3>
@@ -764,6 +930,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Маргарита</h3>
@@ -775,6 +943,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эллина</h3>
@@ -784,6 +954,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эльвира</h3>
@@ -793,6 +965,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гульнара Шаяхметова</h3>
@@ -802,6 +976,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ксения</h3>
@@ -811,6 +987,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гульназ</h3>
@@ -820,6 +998,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Резеда</h3>
@@ -829,6 +1009,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Анастасия</h3>
@@ -839,6 +1021,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия</h3>
@@ -848,6 +1032,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Альбина</h3>
@@ -857,6 +1043,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гуля Заг</h3>
@@ -866,6 +1054,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Елизавета</h3>
@@ -875,6 +1065,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Зумрат</h3>
@@ -884,6 +1076,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Елизавета</h3>
@@ -899,6 +1093,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия</h3>
@@ -908,6 +1104,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Виктория</h3>
@@ -917,6 +1115,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Наталья</h3>
@@ -926,6 +1126,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ландыш</h3>
@@ -935,6 +1137,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Аделя</h3>
@@ -944,6 +1148,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Лия</h3>
@@ -953,6 +1159,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Маша</h3>
@@ -962,6 +1170,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Лана</h3>
@@ -971,6 +1181,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Рамзия</h3>
@@ -980,6 +1192,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Надежда</h3>
@@ -989,6 +1203,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Алсу</h3>
@@ -998,6 +1214,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Наталья</h3>
@@ -1007,6 +1225,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Наташа</h3>
@@ -1018,6 +1238,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Наталья</h3>
@@ -1027,6 +1249,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эльмира</h3>
@@ -1039,6 +1263,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Рената</h3>
@@ -1048,6 +1274,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Лана</h3>
@@ -1057,6 +1285,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Наталья</h3>
@@ -1066,6 +1296,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ильвира</h3>
@@ -1075,6 +1307,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Диана</h3>
@@ -1084,6 +1318,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ольга</h3>
@@ -1093,6 +1329,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Оксана</h3>
@@ -1102,6 +1340,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Людмила</h3>
@@ -1111,6 +1351,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Энже</h3>
@@ -1120,6 +1362,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ландыш</h3>
@@ -1129,6 +1373,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Айгуль</h3>
@@ -1138,6 +1384,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Айгуль</h3>
@@ -1147,6 +1395,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Оксана</h3>
@@ -1156,6 +1406,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Альбина</h3>
@@ -1165,6 +1417,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Renat Yusupov</h3>
@@ -1174,6 +1428,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Альбина</h3>
@@ -1183,6 +1439,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Диляра</h3>
@@ -1192,6 +1450,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Владимир</h3>
@@ -1201,6 +1461,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эллина</h3>
@@ -1210,6 +1472,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Алсу</h3>
@@ -1220,6 +1484,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Алсу</h3>
@@ -1232,6 +1498,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ольга</h3>
@@ -1241,6 +1509,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Виктория</h3>
@@ -1250,6 +1520,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ольга</h3>
@@ -1259,6 +1531,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия</h3>
@@ -1269,6 +1543,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Алсу</h3>
@@ -1278,6 +1554,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Ильвира</h3>
@@ -1287,6 +1565,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Мария</h3>
@@ -1296,6 +1576,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Ирина</h3>
@@ -1305,6 +1587,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Анастасия</h3>
@@ -1314,6 +1598,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Лейсан</h3>
@@ -1323,6 +1609,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Аделия</h3>
@@ -1332,6 +1620,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Гулюза Гильфанова</h3>
@@ -1341,6 +1631,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Гульнара Шаяхметова</h3>
@@ -1350,6 +1642,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Юлия Морозова, 12 мая 2016</h3>
@@ -1359,6 +1653,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Динара Гумерова, 03 апреля 2016</h3>
@@ -1368,6 +1664,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Ольга</h3>
@@ -1377,6 +1675,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Алия Салихова, 20 января 2016</h3>
@@ -1387,6 +1687,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Эльвира Халитова, 22 декабря 2015</h3>
@@ -1396,6 +1698,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Алсу Тагирова, 19 ноября 2015</h3>
@@ -1408,6 +1712,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="family">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Семейная съёмка</span>
           <h3>Миляуша Ахметзянова, 03 ноября 2015</h3>
@@ -1419,6 +1725,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="pregnancy">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">В ожидании</span>
           <h3>Виолета Дмитриевна, 19 октября 2015</h3>
@@ -1428,6 +1736,8 @@ P.s. Теперь очень хочу для себя индивидуальну
         </div>
       </article>
       <article class="rcard" data-type="portrait">
+        <div class="rphoto rphoto-empty" aria-label="Фотография к отзыву пока не добавлена"></div>
+        
         <div class="rbody">
           <span class="rtag">Женский портрет</span>
           <h3>Светлана Гарипова</h3>
