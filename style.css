@@ -309,3 +309,5 @@ header nav a[aria-current="page"] { color: var(--ink); border-bottom: 2px solid 
   background: var(--bg);
 }
 .addons li { margin-bottom: 10px; }
+
+#pricing { scroll-margin-top: 16px; }
